@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 public class Main {
     private static final Logger log = LogManager.getLogger();
     public static void main(String[] args) {
-        final String fileName = "data/nmbers.txt";
+        final String fileName = "data/numbers.txt";
         CustomReader reader = new CustomReaderImpl();
         CustomParser parser = new CustomParserImpl();
         CustomMath  math = new CustomMathImpl();
