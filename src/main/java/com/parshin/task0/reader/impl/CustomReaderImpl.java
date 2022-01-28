@@ -12,10 +12,9 @@ import static com.parshin.task0.validator.NumValidator.lineValidator;
 public class CustomReaderImpl implements CustomReader {
 
     @Override
-    public String readFile(String fileName) throws CustomException {
-        String line = null;
+    public List<String> readFile(String fileName) throws CustomException {
+        String line;
         List<String> lineList = new ArrayList<>();
-        StringBuilder finalString = new StringBuilder();
         File file = new File(fileName);
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -29,10 +28,6 @@ public class CustomReaderImpl implements CustomReader {
         } catch (IOException e) {
             throw new CustomException("Error while reading file", e);
         }
-
-        for (String str : lineList) {
-            finalString.append(str);
-        }
-        return finalString.toString();
+        return lineList;
     }
 }

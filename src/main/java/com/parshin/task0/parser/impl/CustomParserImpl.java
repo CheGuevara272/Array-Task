@@ -1,7 +1,8 @@
 package com.parshin.task0.parser.impl;
 
-import com.parshin.task0.exception.CustomException;
 import com.parshin.task0.parser.CustomParser;
+
+import static com.parshin.task0.validator.NumValidator.numberValidator;
 
 public class CustomParserImpl implements CustomParser  {
     private static final String STRING_TO_INT_DELIMITER = "\\s+";
@@ -14,7 +15,11 @@ public class CustomParserImpl implements CustomParser  {
         int length = numbers.length;
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
-            array[i] = Integer.parseInt(numbers[i]);
+            if (numberValidator(numbers[i])){
+                array[i] = Integer.parseInt(numbers[i]);
+            } else {
+                array[i] = DEFAULT_VALUE;
+            }
         }
         return array;
     }
