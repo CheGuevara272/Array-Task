@@ -37,29 +37,19 @@ public class Main {
 
         CustomMath  math = new CustomMathImpl();
         int max = math.findMax(numbers);
-        log.log(Level.INFO, "Max number in the " + numbers.toString() + " = " + max);
         int min = math.findMin(numbers);
-        log.log(Level.INFO, "Min number in the " + numbers.toString() + " = " + min);
         double average = math.findAverage(numbers);
-        log.log(Level.INFO, "Average value in the " + numbers.toString() + " = " + average);
         int sum = math.findSum(numbers);
-        log.log(Level.INFO, "Sum of numbers in the " + numbers.toString() + " = " + sum);
         int negativeSum = math.sumNegative(numbers);
-        log.log(Level.INFO, "Sun of negatives in the " + numbers.toString() + " = " + negativeSum);
         int positiveSum = math.sumPositive(numbers);
-        log.log(Level.INFO, "Sum of positives in the " + numbers.toString() + " = " + positiveSum);
         int numberOfNegatives = math.countNegative(numbers);
-        log.log(Level.INFO, "Number of negatives in the " + numbers.toString() + " = " + numberOfNegatives);
         int numberOfPositives = math.countPositive(numbers);
-        log.log(Level.INFO, "Number of positives in the " + numbers.toString() + " = " + numberOfPositives);
 
         CustomArray numbers1 = new CustomArray(parser.convertStringToInts(strList.get(1)));
         log.log(Level.INFO, numbers1.toString());
 
         CustomSortImpl sort = new CustomSortImpl();
-        int low = 0;
-        int high = numbers1.getNumbers().length - 1;
-        sort.quickSort(numbers1, low, high);
+        sort.quickSort(numbers1);
         log.log(Level.INFO, numbers1.toString());
 
         CustomArray numbers2 = new CustomArray(parser.convertStringToInts(strList.get(2)));
