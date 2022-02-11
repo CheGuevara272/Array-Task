@@ -6,14 +6,14 @@ import org.apache.logging.log4j.Logger;
 import java.util.Arrays;
 import java.util.StringJoiner;
 
-public class CustomArray extends CustomArrayAbstract {
+public class CustomArray extends AbstractCustomArray {
     private static final Logger log = LogManager.getLogger();
     private int[] array;
 
     private CustomArray() {
     }
 
-    public CustomArray(int[] array) { //TODO Надо ли делать валидацию массива, если в парсере и ридере уже есть валидоторы?
+    public CustomArray(int[] array) {
         this.array = new int[array.length];
         System.arraycopy(array, 0, this.array, 0, array.length);
     }

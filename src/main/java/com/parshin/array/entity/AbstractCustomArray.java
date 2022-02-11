@@ -8,7 +8,7 @@ import com.parshin.array.util.CustomArrayIdGenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomArrayAbstract implements ArrayObservable {
+public class AbstractCustomArray implements ArrayObservable {
     protected int arrayId;
     private List<ArrayObserver> observersList = new ArrayList<>();
 
