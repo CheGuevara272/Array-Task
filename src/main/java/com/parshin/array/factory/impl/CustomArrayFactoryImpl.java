@@ -24,7 +24,7 @@ public class CustomArrayFactoryImpl implements CustomArrayFactory {
     }
 
     @Override
-    public void createCustomArray(int[] intArray) {
+    public void configureCustomArray(int[] intArray) {
         CustomArray customArray = new CustomArray(intArray);
         log.log(Level.INFO, "New CustomArray  has been created {}", customArray.toString());
         addToRepository(customArray);

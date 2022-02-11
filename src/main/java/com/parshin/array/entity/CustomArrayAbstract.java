@@ -3,7 +3,7 @@ package com.parshin.array.entity;
 import com.parshin.array.observer.ArrayEvent;
 import com.parshin.array.observer.ArrayObservable;
 import com.parshin.array.observer.ArrayObserver;
-import com.parshin.array.util.CustomArrayCounter;
+import com.parshin.array.util.CustomArrayIdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class CustomArrayAbstract implements ArrayObservable {
     private List<ArrayObserver> observersList = new ArrayList<>();
 
     {
-        this.arrayId = CustomArrayCounter.getArrayCount();
+        this.arrayId = CustomArrayIdGenerator.generateId();
     }
 
     @Override

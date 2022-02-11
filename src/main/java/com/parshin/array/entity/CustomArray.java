@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Arrays;
+import java.util.StringJoiner;
 
 public class CustomArray extends CustomArrayAbstract {
     private static final Logger log = LogManager.getLogger();
@@ -70,6 +71,8 @@ public class CustomArray extends CustomArrayAbstract {
 
     @Override
     public String toString() {
-        return Arrays.toString(array);
+        return new StringJoiner(", ", CustomArray.class.getSimpleName() + "[", "]")
+                .add("array=" + Arrays.toString(array))
+                .toString();
     }
 }

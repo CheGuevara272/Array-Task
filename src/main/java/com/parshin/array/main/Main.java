@@ -9,8 +9,6 @@ import com.parshin.array.service.impl.CustomSortImpl;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -19,7 +17,7 @@ public class Main {
         final String fileName = "data/numbers.txt";
 
         CustomReaderImpl customReader = CustomReaderImpl.getInstance();
-        List<String> strList = new ArrayList<>();
+        List<String> strList = null;
         try {
             strList = customReader.readFile(fileName);
             log.log(Level.INFO, "Lines were read");
@@ -31,7 +29,7 @@ public class Main {
 
         for (String line : strList) {
             int[] array = customParser.convertStringToInts(line);
-            customArrayFactory.createCustomArray(array);
+            customArrayFactory.configureCustomArray(array);
         }
 
         CustomSortImpl customSort = CustomSortImpl.getInstance();

@@ -1,13 +1,13 @@
 package com.parshin.array.util;
 
-public class CustomArrayCounter {
+public class CustomArrayIdGenerator {
     private static int arrayCount;
 
-    private CustomArrayCounter() {
+    private CustomArrayIdGenerator() {
         throw new IllegalStateException("Utility class");
     }
 
-    public static int getArrayCount() {
+    public static int generateId() {
         arrayCount++;
         return arrayCount;
     }
