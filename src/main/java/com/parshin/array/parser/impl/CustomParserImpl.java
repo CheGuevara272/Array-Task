@@ -2,6 +2,9 @@ package com.parshin.array.parser.impl;
 
 import com.parshin.array.parser.CustomParser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.parshin.array.validator.NumValidator.numberValidator;
 
 public class CustomParserImpl implements CustomParser  {
@@ -20,15 +23,13 @@ public class CustomParserImpl implements CustomParser  {
     public int[] convertStringToInts(String line) {
         line = line.strip();
         String[] numbers = line.split(STRING_TO_INT_DELIMITER);
-        int length = numbers.length;
-        int[] array = new int[length];
-        for (int i = 0; i < length; i++) {
-            if (numberValidator(numbers[i])){
-                array[i] = Integer.parseInt(numbers[i]);
-            } else {
-                array[i] = DEFAULT_VALUE;
+        List<Integer> intList = new ArrayList<>();
+        for (String element: numbers) {
+            if(numberValidator(element)){
+                int current = Integer.parseInt(element);
+                intList.add(current);
             }
         }
-        return array;
+        return  intList.stream().mapToInt(i -> i).toArray();
     }
 }
