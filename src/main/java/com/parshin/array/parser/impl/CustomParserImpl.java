@@ -10,7 +10,6 @@ import static com.parshin.array.validator.NumValidator.numberValidator;
 public class CustomParserImpl implements CustomParser  {
     private static final CustomParserImpl instance = new CustomParserImpl();
     private static final String STRING_TO_INT_DELIMITER = "\\s+";
-    private static final int DEFAULT_VALUE = 0;
 
     private CustomParserImpl(){
     }
